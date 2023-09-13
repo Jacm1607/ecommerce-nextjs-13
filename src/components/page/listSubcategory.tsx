@@ -207,12 +207,6 @@ const SkeletonProduct = () => <div className="card">
     </div>
 </div>
 
-// const fetchProduct = (subcategoria: any) => {
-//     return fetch(`${URL_BASE}/api/productos?populate[subcategoria]=*&filters[subcategoria][id][$eq]=${subcategoria}&pagination[page]=1&populate[imagen][fields][0]=url`)
-//         .then(res => res.json())
-//         .catch((e) => console.log(e))
-// }
-
 const ListProducts = ({ loadingProduct, products, onChangeOrderByPrice, newFetchProducts, priceMin, priceMax, onChangePriceMax, onChangePriceMin }: any) => {
     return (
         <div className="">
