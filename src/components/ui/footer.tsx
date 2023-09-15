@@ -12,7 +12,7 @@ import Link from "next/link"
                     <TitleFooter title='¿QUIÉNES SOMOS?' img={'/quienes-somos.png'} />
                     <span className="text-white text-xl">Acerca de</span>
                     <span className="text-white text-xl">Sala de Prensa</span>
-                    <span className="text-white text-xl">Politica de Privacidad</span>
+                    <Link href={'/terminos-condiciones'} className="text-white text-xl">Términos y condiciones</Link>
                     <Link href={'https://www.trabajopolis.bo/empresa-con-ofertas-de-trabajo-y-empleo-en-bolivia/362914/Markas-S.R.L.'} className="text-white text-xl">Trabaja con Nosotros</Link>
                 </div>
                 <div className="flex flex-col">

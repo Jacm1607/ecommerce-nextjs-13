@@ -5,11 +5,17 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 
 const ListShop = () => {
-    // if (typeof window !== "undefined") {
-    const productsStore = getProductStore();
     const [products, setProducts] = useState([]);
     const [total, setTotal] = useState(0.00);
+    if (typeof window !== "undefined") {
+    const productsStore = getProductStore();
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    useEffect(() => {
+        setProducts(productsStore)
+        updateProducts(productsStore)
+    }, [])
 
+    
     const updateTotal = (products: any) => {
         let subtotal = 0;
         products.map((product: any) => {
@@ -28,11 +34,6 @@ const ListShop = () => {
         setProducts(productsStore)
         updateTotal(productsStore)
     }
-
-    useEffect(() => {
-        setProducts(productsStore)
-        updateProducts(productsStore)
-    }, [])
 
     return (
         <>
@@ -81,7 +82,7 @@ const ListShop = () => {
             }
         </>
     )
-    // }
+    }
 }
 
 export default ListShop;

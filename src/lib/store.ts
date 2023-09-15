@@ -1,13 +1,10 @@
 export const getProductStore = () => {
     let product = localStorage.getItem('products')
+    if (!product){
+        return []
+    }
     return JSON.parse(`${product}`);
 }
-
-export const getProductStore1 = () => {
-    let product = localStorage.getItem('products')
-    JSON.parse(`${product}`);
-}
-
 export const  addProductStore = (product:any, q:any) => {
     product.cantidad = q;
     console.log(product)
@@ -30,4 +27,8 @@ export const removeProductStore = (idProduct:any) => {
     const products = getProductStore();
     let _product = products.filter((product: any) => product.id != idProduct);
     localStorage.setItem('products', JSON.stringify(_product));
+}
+
+export const removeProductAllStore = () => {
+    localStorage.setItem('products', '[]');
 }

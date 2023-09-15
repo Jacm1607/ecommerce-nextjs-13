@@ -57,7 +57,7 @@ interface ICategoria {
 
 
 const ListSubcategory = ({ categoria }: ICategoria) => {
-    const [subcategories, setSubcategories] = useState([])
+    const [subcategories, setSubcategories] = useState<any>([])
     const [subcategory, setSubcategory] = useState();
     const [products, setProducts] = useState([])
     const [loadingSubcategory, setLoadingSubcategory] = useState(true)
